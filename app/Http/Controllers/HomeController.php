@@ -27,15 +27,18 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class HomeController extends Controller{
     public function dashboard(){
-        
-        return view('dashboard');
+        $kriteria_count = Kriteria::count();
+        $alternatif_count = alternatif::count();
+        $user_count = User::count();
+
+        return view('dashboard', ['user_count' => $user_count, 'kriteria_count' => $kriteria_count, 'alternatif_count' => $alternatif_count]);
     }
     // public function perhitungan()
     // {
     //     $altr = alternatif::get();
     //     return view('penilaian',compact('altr'));
     // }
-    
+
 
     // public function hasilakhir(){
     //     return view('hasilakhir');
@@ -50,12 +53,14 @@ class HomeController extends Controller{
         return view('dataprofile');
     }
     public function changePassword(Request $request){
-        
+
        // Validasi input
        $request->validate([
         'current_password' => 'required',
         'new_password' => 'required|min:8|confirmed',
     ]);
+
+    // dd($request->all());
 
     // Cek apakah password saat ini sesuai
     if (!Hash::check($request->current_password, Auth::user()->password)) {
@@ -76,7 +81,7 @@ class HomeController extends Controller{
 
     public function create(){
         return view('create');
-        
+
     }
 
     public function store(Request $request){
@@ -97,7 +102,7 @@ class HomeController extends Controller{
     //     'Bobot'     => 'required',
     //     'Jenis'  => 'required',
     // ]);
-        
+
     // Kriteria::create ([
     //     'nama' => $request->input('NamaKrt'),
     //     'flag' => $request->input('KodeKriteria'),
@@ -105,7 +110,7 @@ class HomeController extends Controller{
     //     'label' => $request->input('Jenis')
     // ]);
 
-    // return redirect()->route('user'); 
+    // return redirect()->route('user');
 
     }
 
@@ -134,7 +139,7 @@ class HomeController extends Controller{
         }
         return redirect()->route('user');
     }
-    
+
             // $kriteria = new Kriteria;
             // $kriteria->nama = $data['NamaKrt'];
             // $kriteria->flag = $data['KodeKriteria'];

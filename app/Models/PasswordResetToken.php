@@ -13,6 +13,8 @@ class PasswordResetToken extends Model
     protected $primaryKey = 'email';
     public $timestamps = false;
 
+    
+
     protected $fillable = [
         'email',
         'token',

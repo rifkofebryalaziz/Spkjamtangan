@@ -40,7 +40,7 @@
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
-          </div> 
+          </div>
         </div>
         @error('email')
           <div class="error-message">{{ $message }}</div>
@@ -74,10 +74,10 @@
       </form>
 
       <div class="social-auth-links text-center mt-2 mb-3">
-        <a href="#" class="btn btn-block btn-primary">
+        {{-- <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
+        </a> --}}
+        <a href="/auth/google" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
         </a>
       </div>

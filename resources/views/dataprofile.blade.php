@@ -38,6 +38,7 @@
             </div>
         @endif
         <form action="{{ route('changePassword') }}" method="POST">
+          @csrf
             <div class="form-group">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" class="form-control" id="email" placeholder="Masukan email" value="{{ old('email') }}">
@@ -47,11 +48,11 @@
                 <input type="password" name="current_password" class="form-control" id="password" placeholder="Masukan Password Lama" >
             </div>
             <div class="form-group">
-              <label for="username">Password Baru</label>
-              <input type="text"  name="new_passwordd" class="form-control" id="password" placeholder="Masukan Password Baru" >
+              <label for="password">Password Baru</label>
+              <input type="password"  name="new_password" class="form-control" id="password" placeholder="Masukan Password Baru" >
           </div>
             <div class="form-group">
-              <label for="password">Confirmasi Password</label>
+              <label for="new_password_confirmation">Confirmasi Password</label>
               <input type="password" name="new_password_confirmation" class="form-control" id="password" placeholder="Confirmasi Password">
           </div>
             <button type="submit" class="btn btn-success">Update</button>

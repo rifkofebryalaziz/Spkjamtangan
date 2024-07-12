@@ -20,7 +20,7 @@
             <div class="card-body">
 
               <h4>Normalisasi</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     <th>Alternatif</th>
@@ -42,7 +42,7 @@
               </table>
 
               <h4>Normalisasi Terbobot</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     <th>Alternatif</th>
@@ -64,7 +64,7 @@
               </table>
 
               <h4>Solusi Ideal Positif (A+)</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     @foreach($kriterias as $kriteria)
@@ -82,7 +82,7 @@
               </table>
 
               <h4>Solusi Ideal Negatif (A-)</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     @foreach($kriterias as $kriteria)
@@ -100,7 +100,7 @@
               </table>
 
               <h4>Jarak Solusi Ideal Positif (D+)</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     <th>Alternatif</th>
@@ -118,7 +118,7 @@
               </table>
 
               <h4>Jarak Solusi Ideal Negatif (D-)</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     <th>Alternatif</th>
@@ -136,7 +136,7 @@
               </table>
 
               <h4>Nilai Preferensi</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     <th>Alternatif</th>
@@ -154,7 +154,7 @@
               </table>
 
               <h4>Ranking Alternatif</h4>
-              <table class="table table-bordered">
+              <table class="table table-bordered mb-4">
                 <thead>
                   <tr>
                     <th>Alternatif</th>

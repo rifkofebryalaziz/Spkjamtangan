@@ -66,7 +66,7 @@
           </form>
         </div>
       </li>
-      
+
 
 
       <li class="nav-item">
@@ -119,7 +119,7 @@
               </p>
             </a>
 
-            <li class="nav-header">Master Data</li>  
+            <li class="nav-header">Master Data</li>
           <li class="nav-item">
             <a href="{{ route('user') }}" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
@@ -128,7 +128,7 @@
               </p>
             </a>
           </li>
- 
+
           <li class="nav-item">
             <a href="{{ route('sub') }}" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
@@ -145,7 +145,7 @@
                 Data Alternatif
               </p>
             </a>
-            
+
 
           <li class="nav-item">
             <a href="{{ route('perhitungan') }}" class="nav-link">
@@ -159,7 +159,7 @@
             <a href="{{ route('hasilakhir') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
-                Data Hasil Akhir 
+                Data Hasil Akhir
               </p>
             </a>
           </li>
@@ -171,7 +171,7 @@
                 Data User
               </p>
             </a>
-            
+
 
           <li class="nav-item">
             <a href="{{ route('dataprofile') }}" class="nav-link">
@@ -183,9 +183,9 @@
 
             <li class="nav-header">-------------------------------------------</li>
             <li class="nav-item">
-              <form action="{{ route('logout') }}" method="POST">
+              <form action="{{ route('logout') }}" method="POST" class="nav-link">
                 @csrf
-                <button type="submit"><i class="nav-icon fas fa-user-circle"></i>
+                <button type="submit" class="bg-secondary border-secondary w-full"><i class="nav-icon fas fa-user-circle"></i>
                   <p>
                     Log Out
                   </p></button>
@@ -205,7 +205,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  @yield('content')    
+  @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2024 <a href="https://poltekharber.ac.id/">Poltek Harber Tegal</a>.</strong>

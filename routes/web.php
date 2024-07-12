@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -10,24 +11,32 @@ use App\Http\Controllers\HitungController;
 //     return view ('layouts.master');
 // });
 
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
+Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');
+
+/**
+ * socialite auth
+ */
+Route::get('/auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
+Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+
+Route::get('/forgot-password', [LoginController::class, 'forgot_password'])->name('forgot-password');
+Route::post('/forgot-password-act', [LoginController::class, 'forgot_password_act'])->name('forgot-password-act');
+Route::get('/validasi-forgot-password/{token}', [LoginController::class, 'validasi_forgot_password'])->name('validasi-forgot-password');
+Route::post('/validasi-forgot-password-act', [LoginController::class, 'validasi_forgot_password_act'])->name('validasi-forgot-password-act');
+
+
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])->name('dashboard');
-
-
+    // Route::get('/', [HomeController::class, 'index'])->name('dashboard');
     // Login - Register
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/register', [LoginController::class, 'register'])->name('register');
-    Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');
-    Route::get('/forgot-password', [LoginController::class, 'forgot_password'])->name('forgot-password');
-    Route::post('/forgot-password-act', [LoginController::class, 'forgot_password_act'])->name('forgot-password-act');
-    Route::get('/validasi-forgot-password/{token}', [LoginController::class, 'validasi_forgot_password'])->name('validasi-forgot-password');
-    Route::post('/validasi-forgot-password-act', [LoginController::class, 'validasi_forgot_password_act'])->name('validasi-forgot-password-act');
 
     //Dashboard
-    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard');
 
     //Kriteria
     Route::get('/datakriteria', [HomeController::class, 'user'])->name('user');

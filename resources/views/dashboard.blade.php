@@ -29,7 +29,7 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>5</h3>
+              <h3>{{ $kriteria_count }}</h3>
 
               <p>Kriteria</p>
             </div>
@@ -40,7 +40,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>4</h3>
+              <h3>{{ $alternatif_count }}</h3>
 
               <p>Alternatif</p>
             </div>
@@ -51,7 +51,7 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>2</h3>
+              <h3>{{ $user_count }}</h3>
 
               <p>User </p>
             </div>
@@ -76,5 +76,5 @@
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
-</div>    
+</div>
 @endsection
